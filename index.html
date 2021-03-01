@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input style</title>
+</head>
+
+<style>
+.control-me::after {
+    content: "😃";
+    font-size: 100px;
+}
+#toggle:checked ~ .control-me::after {
+    content: "😩";
+}
+
+label {
+    background: #07ffea;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
+    
+    /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font: 900 24px/1.4 -system-ui, sans-serif;
+}
+
+
+
+
+</style>
+
+
+<body>
+    
+    <label for="toggle">Do Something</label>
+<input type="checkbox" id="toggle">
+<div class="control-me"></div>
+
+</body>
+</html>
